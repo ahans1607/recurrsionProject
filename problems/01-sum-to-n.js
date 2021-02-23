@@ -10,8 +10,17 @@ sumToN(1)  // returns 1
 sumToN(9)  // returns 45
 sumToN(-8)  // returns null
 ***********************************************************************/
+function sumToN(num){
+  if (num < 1){
+    return null
+  }
 
-// your code here
+  if (num === 0){
+    return;
+  }
+  
+  return sumToN((num - 1)) + num
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {

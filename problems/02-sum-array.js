@@ -10,7 +10,14 @@ sumArray([0, 1, -3]); //  -2
 sumArray([1, 2, 3, 4, 5]); // 15
 ***********************************************************************/
 
-// your code here
+function sumArray(array, sum = 0){
+  if (array.length === 0){
+    return sum;
+  }
+  sum += array[0]
+  array.shift()
+  return sumArray(array, sum)
+}
   
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {

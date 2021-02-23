@@ -11,9 +11,20 @@ iceCreamShop(['cookies n cream', 'blue moon', 'superman', 'honey lavender', 'sea
 iceCreamShop(['moose tracks'], 'moose tracks'); // true
 iceCreamShop([], 'honey lavender'); // false
 ***********************************************************************/
+iceCreamShop = (flavors, favorite) => {
+  if (flavors.length === 0){
+    return false
+  }
+  
+  if (flavors[0] === favorite){
+    return true
+  }
 
+  flavors.shift();
+  return iceCreamShop(flavors, favorite)
 
-// your code here
+}
+
 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/

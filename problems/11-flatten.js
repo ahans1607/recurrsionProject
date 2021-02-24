@@ -15,7 +15,7 @@ function flatten(array, finalArr = []){
     return finalArr
   }
   if (Array.isArray(array[0])){
-    finalArr.concat(array)
+    finalArr.concat(array[0])
   } else (
     finalArr.push(array[0])
   )

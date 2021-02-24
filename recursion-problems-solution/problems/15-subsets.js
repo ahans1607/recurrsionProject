@@ -14,21 +14,18 @@ Hint: For subsets([1, 2, 3]), there are two kinds of subsets:
      subset that is the same, except it also does contain 3.
 ***********************************************************************/
 
-subsets = (array, finalArr = []) => {
-  if (array.length === 0){
-    return finalArr
-  }
+const subsets = (arr) => {
+  if (!arr.length) return [[]];
 
-  let 
+  const last = arr[arr.length - 1];
+  const subs = subsets(arr.slice(0, arr.length - 1));
 
-  return 
+  return subs.concat(subs.map((el) => {
+    let newArr = el.slice(0)
+    newArr.push(last);
+    return newArr;
+  }));
 }
-
-console.log(subsets([])) // [[]]
-console.log(subsets([1])) // [[], [1]]
-console.log(subsets([1, 2])) // [[], [1], [2], [1, 2]]
-console.log(subsets([1, 2, 3])) // [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
-
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {

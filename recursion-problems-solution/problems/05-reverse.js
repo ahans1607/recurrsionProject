@@ -4,26 +4,22 @@ it reversed.
 
 Examples:
 
-
-***********************************************************************/
-
-reverse = (string, array = string.split(""), finalArr = []) => {
-  if(array.length === 0){
-    return finalArr.join("")
-  }
-
-  let last = array.pop()
-  finalArr.push(last)
-
-  return reverse(string, array, finalArr)
-}
-
-console.log(reverse("house")); // "esuoh"
+reverse("house"); // "esuoh"
 reverse("dog"); // "god"
 reverse("atom"); // "mota"
 reverse("q"); // "q"
 reverse("id"); // "di"
-console.log(reverse("")); // ""
+reverse(""); // ""
+***********************************************************************/
+
+
+function reverse(str) {
+  if (!str.length) return str;
+
+  return reverse(str.slice(1)) + str[0];
+}
+
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = reverse;

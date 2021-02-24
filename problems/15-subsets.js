@@ -8,25 +8,35 @@ subsets([1]) // [[], [1]]
 subsets([1, 2]) // [[], [1], [2], [1, 2]]
 subsets([1, 2, 3]) // [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
 
-Hint: For subsets([1, 2, 3]), there are two kinds of subsets:
-  1. Those that do not contain 3 (all of these are subsets of [1, 2]).
-  2. For every subset that does not contain 3, there is also a corresponding
-     subset that is the same, except it also does contain 3.
 ***********************************************************************/
 
-subsets = (array, finalArr = []) => {
+const subsets = (array) => {
+  
   if (array.length === 0){
-    return finalArr
+    
+    return [[]];
   }
 
-  let 
-
-  return 
+  
+  let lastVar = array[array.length - 1]
+  let workingArray = subsets(array.slice(0, array.length - 1))
+  
+  
+  const mapped = workingArray.map(function(el){
+    let finalArr = el.slice(0)
+    
+    finalArr.push(lastVar)
+    
+    return finalArr
+  });
+  
+  
+  return workingArray.concat(mapped)
 }
 
-console.log(subsets([])) // [[]]
-console.log(subsets([1])) // [[], [1]]
-console.log(subsets([1, 2])) // [[], [1], [2], [1, 2]]
+// console.log(subsets([])) // [[]]
+// console.log(subsets([1])) // [[], [1]]
+// console.log(subsets([1, 2])) // [[], [1], [2], [1, 2]]
 console.log(subsets([1, 2, 3])) // [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
 
 

@@ -13,9 +13,21 @@ addToTwelve([1]); // false
 ***********************************************************************/
 
 function addToTwelve(array){
-  
+  if (array.length === 0){
+    return false
+  }
+  if (array[0] + array [1] === 12){
+    return true
+  }
+  array.shift()
+  return addToTwelve(array)
 }
 
+console.log(addToTwelve([1, 3, 4, 7, 5])); // true
+console.log(addToTwelve([1, 3, 4, 7, 6])); // false
+console.log(addToTwelve([1, 11, 4, 7, 6])); // true
+console.log(addToTwelve([1, 12, 4, 7, 6])); // false
+console.log(addToTwelve([1])); // false
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = addToTwelve;

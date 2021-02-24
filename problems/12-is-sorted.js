@@ -10,8 +10,19 @@ isSorted([2, 4, 6, 7, 8]); // true
 isSorted([5, 4, 3, 2, 1]); // false
 ***********************************************************************/
 
-// your code here
+const isSortedFunc = isSorted = (array) => {
+  if (array.length === 0 ){
+    return true;
+  }
 
+  if(array[0] < array[1]){
+    array.shift()
+  } else {
+    return false
+  }
+
+  return isSorted(array)
+}
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = isSorted;

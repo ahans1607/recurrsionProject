@@ -10,29 +10,51 @@ subsets([1, 2, 3]) // [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
 
 ***********************************************************************/
 
-const subsets = (array) => {
-  
+function subsets(array, finalArr = []){
   if (array.length === 0){
+    return [[]]
+  };
+
+  let lastEle = array.pop();
+  let rec = subsets(array);
+
+    for (let i = 0; i < rec.length; i++){
+      let currentEle = rec[i]
+      let newArray = currentEle.concat([lastEle])
+      finalArr.push(newArray)
+    };
+};
+
+
+
+
+
+
+
+
+// const subsets = (array) => {
+  
+//   if (array.length === 0){
     
-    return [[]];
-  }
+//     return [[]];
+//   }
 
   
-  let lastVar = array[array.length - 1]
-  let workingArray = subsets(array.slice(0, array.length - 1))
+//   let lastVar = array[array.length - 1]
+//   let workingArray = subsets(array.slice(0, array.length - 1))
   
   
-  const mapped = workingArray.map(function(el){
-    let finalArr = el.slice(0)
+//   const mapped = workingArray.map(function(el){
+//     let finalArr = el.slice(0)
     
-    finalArr.push(lastVar)
+//     finalArr.push(lastVar)
     
-    return finalArr
-  });
+//     return finalArr
+//   });
   
   
-  return workingArray.concat(mapped)
-}
+//   return workingArray.concat(mapped)
+// }
 
 // console.log(subsets([])) // [[]]
 // console.log(subsets([1])) // [[], [1]]

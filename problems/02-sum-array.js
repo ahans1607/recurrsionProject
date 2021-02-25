@@ -10,13 +10,16 @@ sumArray([0, 1, -3]); //  -2
 sumArray([1, 2, 3, 4, 5]); // 15
 ***********************************************************************/
 
-function sumArray(array, sum = 0){
-  if (array.length === 0){
-    return sum;
+const sumFunc = (array, sum = 0) => {
+  if (!array.length){
+    return sum
   }
-  sum += array[0]
-  array.shift()
-  return sumArray(array, sum)
+
+  let firstNum = array.shift()
+  sum += firstNum
+
+  return sumFunc
+
 }
   
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/

@@ -2,27 +2,28 @@
 Write a recursive function reverse(string) that takes in a string and returns
 it reversed.
 
-Examples:
-
-
 ***********************************************************************/
 
-reverse = (string, array = string.split(""), finalArr = []) => {
-  if(array.length === 0){
+function reverse(string, array = string.split(""), finalArr = []){
+  if (!array.length){
     return finalArr.join("")
   }
 
-  let last = array.pop()
+  let last = array.pop();
   finalArr.push(last)
 
   return reverse(string, array, finalArr)
+
 }
 
+
+
+
 console.log(reverse("house")); // "esuoh"
-reverse("dog"); // "god"
-reverse("atom"); // "mota"
-reverse("q"); // "q"
-reverse("id"); // "di"
+console.log(reverse("dog")); // "god"
+console.log(reverse("atom")); // "mota"
+console.log(reverse("q")); // "q"
+console.log(reverse("id")); // "di"
 console.log(reverse("")); // ""
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {

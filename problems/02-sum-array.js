@@ -10,7 +10,7 @@ sumArray([0, 1, -3]); //  -2
 sumArray([1, 2, 3, 4, 5]); // 15
 ***********************************************************************/
 
-const sumFunc = (array, sum = 0) => {
+sumArray = (array, sum = 0) => {
   if (!array.length){
     return sum
   }
@@ -18,7 +18,7 @@ const sumFunc = (array, sum = 0) => {
   let firstNum = array.shift()
   sum += firstNum
 
-  return sumFunc
+  return sumArray(array, sum)
 
 }
   

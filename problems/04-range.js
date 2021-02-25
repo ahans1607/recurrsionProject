@@ -10,21 +10,6 @@ range(3, 4); // [3]
 range(7, 6); // []
 ***********************************************************************/
 
-function range(start, end, array = []){
-  if (array[array.length - 1] === end - 1){
-    return array
-  }
-
-  if (start >= end){
-    return []
-  }
- 
-  
-  array.push(start)
-  start++
-  
-  return range(start, end, array)
-}
 
 console.log(range(1, 5)); // [1, 2, 3, 4]
 console.log(range(3, 4)); // [3]

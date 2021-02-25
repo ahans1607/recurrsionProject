@@ -10,6 +10,17 @@ range(3, 4); // [3]
 range(7, 6); // []
 ***********************************************************************/
 
+function range(start, end, array = []){
+  if(end <= start){
+    return array
+  }
+
+  array.push(start);
+  start += 1
+
+  return range(start, end, array)
+
+}
 
 console.log(range(1, 5)); // [1, 2, 3, 4]
 console.log(range(3, 4)); // [3]

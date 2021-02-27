@@ -19,23 +19,14 @@ exponent(3, 2); // 9
 exponent(2, -2); // 1/4 (or 0.25)
 exponent(5, 5); // 3125
 ***********************************************************************/
-
-// function exponent(b, n, finalNum = 1) {
-//   if (n === 0){
-//     return finalNum;
-//   }
+function exponent(num1, num2){
+  
+}
 
 
-
-//   finalNum *= b
-//   n--
-
-//   return exponent(b, n, finalNum)
-// }
-
-// console.log(exponent(3, 2)); // 9
-// // console.log(exponent(2, -2)); // 1/4 (or 0.25)
-// console.log(exponent(5, 5)); // 3125
+console.log(exponent(3, 2)); // 9
+console.log(exponent(2, -2)); // 1/4 (or 0.25)
+console.log(exponent(5, 5)); // 3125
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = exponent;
